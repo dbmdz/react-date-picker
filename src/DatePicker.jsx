@@ -27,6 +27,8 @@ export default class DatePicker extends PureComponent {
 
   state = {};
 
+  calendarRef = React.createRef()
+
   componentDidMount() {
     this.handleOutsideActionListeners();
   }
@@ -84,8 +86,18 @@ export default class DatePicker extends PureComponent {
     this.openCalendar();
   }
 
+  onCalendarKeydown = (event) => {
+    if (event.code !== 'Escape') {
+      return;
+    }
+    event.stopPropagation();
+    this.closeCalendar();
+  }
+
   openCalendar = () => {
-    this.setState({ isOpen: true });
+    this.setState({ isOpen: true }).then(() => {
+      this.calendarRef.current.addEventListener('keydown', this.onCalendarKeydown);
+    });
   }
 
   closeCalendar = () => {
@@ -95,11 +107,20 @@ export default class DatePicker extends PureComponent {
       }
 
       return { isOpen: false };
+    }).then(() => {
+      this.calendarRef.current.removeEventListener('keydown', this.onCalendarKeydown);
     });
   }
 
   toggleCalendar = () => {
-    this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
+    this.setState((prevState) => ({ isOpen: !prevState.isOpen })).then(() => {
+      const { isOpen } = this.state;
+      if (!isOpen) {
+        this.calendarRef.current.removeEventListener('keydown', this.onCalendarKeydown);
+      } else {
+        this.calendarRef.current.addEventListener('keydown', this.onCalendarKeydown);
+      }
+    });
   }
 
   stopPropagation = (event) => event.stopPropagation();
@@ -233,6 +254,7 @@ export default class DatePicker extends PureComponent {
             className={calendarClassName}
             onChange={this.onChange}
             value={value || null}
+            inputRef={this.calendarRef}
             {...calendarProps}
           />
         </div>
