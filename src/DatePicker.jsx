@@ -97,7 +97,7 @@ export default class DatePicker extends PureComponent {
   }
 
   openCalendar = () => {
-    this.setState({ isOpen: true }).then(() => {
+    this.setState({ isOpen: true }, () => {
       this.calendarRef.current.addEventListener('keydown', this.onCalendarKeydown);
     });
   }
@@ -109,13 +109,13 @@ export default class DatePicker extends PureComponent {
       }
 
       return { isOpen: false };
-    }).then(() => {
+    }, () => {
       this.calendarRef.current.removeEventListener('keydown', this.onCalendarKeydown);
     });
   }
 
   toggleCalendar = () => {
-    this.setState((prevState) => ({ isOpen: !prevState.isOpen })).then(() => {
+    this.setState((prevState) => ({ isOpen: !prevState.isOpen }), () => {
       const { isOpen } = this.state;
       if (!isOpen) {
         this.calendarRef.current.removeEventListener('keydown', this.onCalendarKeydown);
