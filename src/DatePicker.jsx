@@ -120,6 +120,7 @@ export default class DatePicker extends PureComponent {
       if (!isOpen) {
         this.calendarRef.current.removeEventListener('keydown', this.onCalendarKeydown);
       } else {
+        this.calendarRef.current.focus();
         this.calendarRef.current.addEventListener('keydown', this.onCalendarKeydown);
       }
     });
