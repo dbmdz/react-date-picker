@@ -158,7 +158,7 @@ export default class DatePicker extends PureComponent {
       monthPlaceholder,
       name,
       nativeInputAriaLabel,
-      renderAriaLabelAsTitle,
+      renderAriaLabelAsTitle = false,
       required,
       returnValue,
       showLeadingZeros,
