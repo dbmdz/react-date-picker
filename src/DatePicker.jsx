@@ -349,6 +349,11 @@ DatePicker.propTypes = {
     PropTypes.arrayOf(PropTypes.string),
   ]),
   calendarIcon: PropTypes.node,
+  calendarNavigationAriaLabel: PropTypes.string,
+  calendarNextAriaLabel: PropTypes.string,
+  calendarNext2AriaLabel: PropTypes.string,
+  calendarPrevAriaLabel: PropTypes.string,
+  calendarPrev2AriaLabel: PropTypes.string,
   className: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
