@@ -22,6 +22,7 @@ declare module "@mdz/react-date-picker" {
     onCalendarClose?: () => void;
     onCalendarOpen?: () => void;
     openCalendarOnFocus: boolean,
+    renderAriaLabelAsTitle: boolean,
     required?: boolean;
     showLeadingZeros?: boolean;
     yearAriaLabel?: string

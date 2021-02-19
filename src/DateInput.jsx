@@ -292,6 +292,7 @@ export default class DateInput extends PureComponent {
       isCalendarOpen,
       maxDate,
       minDate,
+      renderAriaLabelAsTitle,
       required,
     } = this.props;
 
@@ -303,6 +304,7 @@ export default class DateInput extends PureComponent {
       onChange: this.onChange,
       onKeyDown: this.onKeyDown,
       onKeyUp: this.onKeyUp,
+      renderAriaLabelAsTitle,
       // This is only for showing validity when editing
       required: required || isCalendarOpen,
       itemRef: (ref, name) => {
@@ -625,6 +627,7 @@ DateInput.propTypes = {
   name: PropTypes.string,
   nativeInputAriaLabel: PropTypes.string,
   onChange: PropTypes.func,
+  renderAriaLabelAsTitle: PropTypes.bool,
   required: PropTypes.bool,
   returnValue: PropTypes.oneOf(['start', 'end', 'range']),
   showLeadingZeros: PropTypes.bool,
