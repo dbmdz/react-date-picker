@@ -15,6 +15,7 @@ export default function MonthSelect({
   maxDate,
   minDate,
   placeholder = '--',
+  renderAriaLabelAsTitle,
   short,
   value,
   year,
@@ -44,6 +45,7 @@ export default function MonthSelect({
           itemRef(ref, name);
         }
       }}
+      title={renderAriaLabelAsTitle && ariaLabel}
       value={value !== null ? value : ''}
       {...otherProps}
     >
@@ -82,6 +84,7 @@ MonthSelect.propTypes = {
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   placeholder: PropTypes.string,
+  renderAriaLabelAsTitle: PropTypes.bool,
   required: PropTypes.bool,
   short: PropTypes.bool,
   value: PropTypes.number,

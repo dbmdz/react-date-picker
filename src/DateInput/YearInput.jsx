@@ -48,6 +48,7 @@ YearInput.propTypes = {
   onKeyDown: PropTypes.func,
   onKeyUp: PropTypes.func,
   placeholder: PropTypes.string,
+  renderAriaLabelAsTitle: PropTypes.bool,
   required: PropTypes.bool,
   value: PropTypes.number,
   valueType: isValueType,

@@ -87,6 +87,7 @@ export default function Input({
   onKeyDown,
   onKeyUp,
   placeholder = '--',
+  renderAriaLabelAsTitle,
   required,
   showLeadingZeros,
   step,
@@ -137,6 +138,7 @@ export default function Input({
       }}
       required={required}
       step={step}
+      title={renderAriaLabelAsTitle && ariaLabel}
       type="number"
       value={value !== null ? value : ''}
     />,
