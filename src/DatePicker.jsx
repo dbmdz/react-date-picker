@@ -219,6 +219,7 @@ export default class DatePicker extends PureComponent {
         )}
         {calendarIcon !== null && !disableCalendar && (
           <button
+            aria-expanded={isOpen}
             aria-label={calendarAriaLabel}
             className={`${baseClassName}__calendar-button ${baseClassName}__button`}
             disabled={disabled}
