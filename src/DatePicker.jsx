@@ -246,6 +246,11 @@ export default class DatePicker extends PureComponent {
     const {
       calendarClassName,
       className: datePickerClassName, // Unused, here to exclude it from calendarProps
+      calendarNavigationAriaLabel,
+      calendarNextAriaLabel,
+      calendarNext2AriaLabel,
+      calendarPrevAriaLabel,
+      calendarPrev2AriaLabel,
       onChange,
       value,
       ...calendarProps
@@ -258,7 +263,12 @@ export default class DatePicker extends PureComponent {
         <div className={mergeClassNames(className, `${className}--${isOpen ? 'open' : 'closed'}`)}>
           <Calendar
             className={calendarClassName}
+            navigationAriaLabel={calendarNavigationAriaLabel}
+            nextAriaLabel={calendarNextAriaLabel}
+            next2AriaLabel={calendarNext2AriaLabel}
             onChange={this.onChange}
+            prevAriaLabel={calendarPrevAriaLabel}
+            prev2AriaLabel={calendarPrev2AriaLabel}
             value={value || null}
             inputRef={this.calendarRef}
             {...calendarProps}
