@@ -7,6 +7,11 @@ declare module "@mdz/react-date-picker" {
     calendarAriaLabel?: string;
     calendarClassName?: string | string[];
     calendarIcon?: JSX.Element | null;
+    calendarNavigationAriaLabel: string;
+    calendarNextAriaLabel: string;
+    calendarNext2AriaLabel: string;
+    calendarPrevAriaLabel: string;
+    calendarPrev2AriaLabel: string;
     className?: string | string[];
     clearAriaLabel?: string;
     clearIcon?: JSX.Element | null;
