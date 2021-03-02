@@ -226,6 +226,7 @@ export default class DatePicker extends PureComponent {
             onBlur={this.resetValue}
             onClick={this.toggleCalendar}
             onFocus={this.stopPropagation}
+            onKeyDown={this.onCalendarKeydown}
             type="button"
           >
             {calendarIcon}
