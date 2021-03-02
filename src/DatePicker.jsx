@@ -89,7 +89,7 @@ export default class DatePicker extends PureComponent {
   }
 
   onCalendarKeydown = (event) => {
-    if (event.code !== 'Escape') {
+    if (event.key !== 'Escape') {
       return;
     }
     event.stopPropagation();
