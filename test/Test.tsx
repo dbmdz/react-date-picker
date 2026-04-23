@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import DatePicker from 'react-date-picker';
-import 'react-date-picker/dist/DatePicker.css';
+import DatePicker from '@mdz/react-date-picker';
+import '@mdz/react-date-picker/dist/DatePicker.css';
 import 'react-calendar/dist/Calendar.css';
 
 import ValidityOptions from './ValidityOptions.js';
