@@ -19,9 +19,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@mdz/react-date-picker": "workspace:packages/react-date-picker",
     "@wojtekmaj/date-utils": "^2.0.2",
     "react": "^19.2.0",
-    "react-date-picker": "workspace:packages/react-date-picker",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
