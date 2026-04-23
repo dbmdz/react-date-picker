@@ -1,6 +1,6 @@
 {
   "name": "@mdz/react-date-picker",
-  "version": "12.0.2",
+  "version": "12.0.2-mdz.7",
   "description": "A date picker for your React app.",
   "type": "module",
   "sideEffects": [

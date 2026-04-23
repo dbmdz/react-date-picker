@@ -110,12 +110,12 @@ describe('YearInput', () => {
     expect(inputRef.current).toBeInstanceOf(HTMLInputElement);
   });
 
-  it('has min = "1" by default', async () => {
+  it('has min = "0" by default', async () => {
     await render(<YearInput {...defaultProps} />);
 
     const input = page.getByRole('spinbutton');
 
-    expect(input).toHaveAttribute('min', '1');
+    expect(input).toHaveAttribute('min', '0');
   });
 
   it('has min = (year in minDate) given minDate', async () => {
